@@ -18,7 +18,7 @@
                         <!--<img src="../../assets/logo.png"  height="200">-->
                     </div>
                     <div style="padding: 14px;">
-                        <span>{{item.cType}}  --  {{item.cName}}</span>
+                        <span :sss="item.cType">{{item.cType}}  --  {{item.cName}}</span>
                         <div class="bottom clearfix">
                             <el-button type="text" class="button">{{item.cDateStr}}</el-button>
                         </div>
@@ -63,7 +63,6 @@
 
 <script>
     import ElButton from "../../../node_modules/element-ui/packages/button/src/button.vue";
-
     export default {
         components: {ElButton},
         data: function(){
@@ -109,7 +108,7 @@
                         console.log(data);
                         vm.loading = false;
                         vm.$message(data.message);
-                        if(data.statusCode===0){
+                        if(data.statusCode==0){
                             vm.communityList = data.dataInfo.listData;
                         }
                     },
@@ -122,7 +121,7 @@
             onSubmit:function () {
                 let vm = this;
                 let ctime = this.dateFns.format(this.form.cDateStr,"YYYY-MM-DD");
-                if(vm.form.cName === "" || vm.form.cDateStr==="" || vm.form.cIntroduction ==="" || vm.form.file.length ===0){
+                if(vm.form.cName == "" || vm.form.cDateStr=="" || vm.form.cIntroduction =="" || vm.form.file.length ==0){
                     vm.$message("请填写完整信息");
                     return 0;
                 }
@@ -150,7 +149,7 @@
                         vm.loading = false;
                        let obj = JSON.parse(data);
                         vm.$message(obj.message);
-                        if(obj.statusCode === 0){
+                        if(obj.statusCode == 0){
                             vm.bgshow = false;
                             vm.getdata();
 

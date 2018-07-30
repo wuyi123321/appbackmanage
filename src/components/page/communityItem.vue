@@ -53,7 +53,7 @@
                     success: function(data) {
                         console.log(data);
                         vm.$message(data.message);
-                        if(data.statusCode===0){
+                        if(data.statusCode==0){
                             vm.communityMess = data.dataInfo.listData[0];
                         }
                     },

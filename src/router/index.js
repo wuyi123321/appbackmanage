@@ -47,6 +47,9 @@ export default new Router({
                 {
                 path: '/comItemActive',
                 component: resolve => require(['../components/page/comItemchild/comItemActive.vue'], resolve),
+            },{
+                path: '/ActiveItem',
+                component: resolve => require(['../components/page/comItemchild/ActiveItem.vue'], resolve),
             }]
         },
     ]

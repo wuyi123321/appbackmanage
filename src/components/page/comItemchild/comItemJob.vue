@@ -165,7 +165,7 @@
                     type: "get",
                     success: function(data) {
                         console.log(data);
-                        if(data.statusCode===0){
+                        if(data.statusCode==0){
                         }
                     },
                     error: function() {
